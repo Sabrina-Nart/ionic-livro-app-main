@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Cadastro de Livros</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item>
+        <ion-input type="text" placeholder="Título" label="Título" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="text" placeholder="Subtítulo" label="Subtítulo" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="number" placeholder="N°. Páginas" label="N°. Páginas" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="text" placeholder="ISBN" label="ISBN" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="text" placeholder="Editora" label="Editora" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="number" placeholder="Ano" label="Ano" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="url" placeholder="Logo (URL)" label="Logo (URL)" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="number" placeholder="Preço" label="Preço" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-item>
+            <ion-select label="Autor(es)" value="" multiple="true" placeholder="Selecione os autores" [compareWith]="compareWith">
+                <ion-select-option *ngFor="let autor of autores" [value]="autor">
+                    {{autor.nome}}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-item>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+            <ion-icon name="checkmark"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>
+
+<ion-footer>
+
+</ion-footer>

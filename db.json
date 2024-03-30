@@ -1,0 +1,131 @@
+{
+  "autores": [
+    {
+      "nome": "Martin Fowler",
+      "dataNascimento": "1976-02-25T00:00:00",
+      "genero": "M",
+      "id": 1
+    },
+    {
+      "nome": "David Cockford",
+      "dataNascimento": "2000-04-28T20:30:34.363-03:00",
+      "genero": "M",
+      "id": 2
+    },
+    {
+      "nome": "Erich Gamma",
+      "dataNascimento": "1991-02-27T20:01:00",
+      "genero": "M",
+      "id": 3
+    },
+    {
+      "nome": "J.K. Rowling",
+      "dataNascimento": "1934-01-27T23:10:00",
+      "genero": "M",
+      "id": 4
+    }
+  ],
+  "livros": [
+    {
+      "id": 1,
+      "titulo": "JavaScript - The Good Parts",
+      "subtitulo": "The subtitle",
+      "numeroPaginas": 170,
+      "isbn": "0596517742",
+      "editora": "O'Reilly",
+      "ano": 2008,
+      "logoUrl": "https://m.media-amazon.com/images/I/7185IMvz88L._SL1500_.jpg",
+      "preco": 259.87,
+      "autores": [
+        {
+          "nome": "David Cockford",
+          "dataNascimento": "2000-04-28T20:30:34.363-03:00",
+          "genero": "M",
+          "id": 2
+        },
+        {
+          "nome": "David Cockford",
+          "dataNascimento": "2000-04-28T20:30:34.363-03:00",
+          "genero": "M",
+          "id": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "JavaScript - The Good Parts 2",
+      "subtitulo": "",
+      "numeroPaginas": 170,
+      "isbn": "0596517742",
+      "editora": "O'Reilly",
+      "ano": 2008,
+      "logoUrl": "https://m.media-amazon.com/images/I/7185IMvz88L._SL1500_.jpg",
+      "preco": 259.87,
+      "autores": [
+        {
+          "nome": "David Cockford",
+          "dataNascimento": "2000-04-28T20:30:34.363-03:00",
+          "genero": "M",
+          "id": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "JavaScript - The Good Parts 2",
+      "subtitulo": "",
+      "numeroPaginas": 170,
+      "isbn": "0596517742",
+      "editora": "O'Reilly",
+      "ano": 2008,
+      "logoUrl": "https://m.media-amazon.com/images/I/7185IMvz88L._SL1500_.jpg",
+      "preco": 259.87,
+      "autores": [
+        {
+          "nome": "David Cockford",
+          "dataNascimento": "2000-04-28T20:30:34.363-03:00",
+          "genero": "M",
+          "id": 2
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "JavaScript - The Good Parts 2",
+      "subtitulo": "",
+      "numeroPaginas": 170,
+      "isbn": "0596517742",
+      "editora": "O'Reilly",
+      "ano": 2008,
+      "logoUrl": "https://m.media-amazon.com/images/I/7185IMvz88L._SL1500_.jpg",
+      "preco": 259.87,
+      "autores": [
+        {
+          "nome": "David Cockford",
+          "dataNascimento": "2000-04-28T20:30:34.363-03:00",
+          "genero": "M",
+          "id": 2
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "JavaScript - The Good Parts 2",
+      "subtitulo": "",
+      "numeroPaginas": 170,
+      "isbn": "0596517742",
+      "editora": "O'Reilly",
+      "ano": 2008,
+      "logoUrl": "https://m.media-amazon.com/images/I/7185IMvz88L._SL1500_.jpg",
+      "preco": 259.87,
+      "autores": [
+        {
+          "nome": "David Cockford",
+          "dataNascimento": "2000-04-28T20:30:34.363-03:00",
+          "genero": "M",
+          "id": 2
+        }
+      ]
+    }
+  ]
+}
