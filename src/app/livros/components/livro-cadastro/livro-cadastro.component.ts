@@ -17,8 +17,8 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
         private alertService: AlertService
     ) { }
 
-    ngOnInit(): void {
-        this.carregaAutores()
+    ngOnInit(): void { //Lógica para carregar os autores
+        this.carregaAutores() //Por causa da ComboBox
     }
 
     ngOnDestroy(): void {

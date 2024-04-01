@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Bored App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-activity-selector (typeSelected)="onTypeSelected($event)"></app-activity-selector>
+  <app-activity-display *ngIf="activity" [activity]="activity"></app-activity-display>
+</ion-content>

@@ -3,43 +3,50 @@
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>
-            Listagem de livros
-        </ion-title>
+
+        <ion-title>Listagem de livros</ion-title>
     </ion-toolbar>
 </ion-header>
+
 <ion-content>
     <ion-list>
-        <ion-item *ngFor="let livro of livros">
-            <ion-thumbnail>
-                <img [src]="livro.logoUrl" alt="livro.titulo" />
-            </ion-thumbnail>
-            <ion-label class="livro-descricao">
-                <h1>{{livro.titulo}}</h1>
-                <h2>{{livro.subtitulo}}</h2>
-                <h3>
-                    <strong>
-                        {{livro.autores.length > 1 ? 'Autor(es)' : 'Autor' }}:
-                    </strong>
-                </h3>
-                <ul>
-                    <li *ngFor="let autor of livro.autores">
-                        <h3 class="autor">{{autor.nome}}</h3>
-                    </li>
-                </ul>
-                <h3><strong>ISBN</strong>: {{livro.isbn}}</h3>
-                <h3><strong>Pág.</strong>: {{livro.numeroPaginas}}</h3>
-                <h3><strong>Editora</strong>: {{livro.editora}}</h3>
-                <h3><strong>Ano</strong>: {{livro.ano}}</h3>
-            </ion-label>
-            <ion-text color="danger">
-                <h2>{{livro.preco | currency}}</h2>
-            </ion-text>
-        </ion-item>
+          <ion-item *ngFor="let livro of livros">
+              <ion-thumbnail>
+                  <img [src]="livro.logoUrl" alt="livro.titulo" />
+              </ion-thumbnail>
+
+              <ion-label class="livro-descricao">
+                    <h1>{{livro.titulo}}</h1>
+                    <h2>{{livro.subtitulo}}</h2>
+
+                    <h3>
+                        <strong>
+                            {{livro.autores.length > 1 ? 'Autor(es)' : 'Autor' }}:
+                        </strong>
+                    </h3>
+
+                    <ul>
+                        <li *ngFor="let autor of livro.autores">
+                            <h3 class="autor">{{autor.nome}}</h3>
+                        </li>
+                    </ul>
+
+                    <h3><strong>ISBN</strong>: {{livro.isbn}}</h3>
+                    <h3><strong>Pág.</strong>: {{livro.numeroPaginas}}</h3>
+                    <h3><strong>Editora</strong>: {{livro.editora}}</h3>
+                    <h3><strong>Ano</strong>: {{livro.ano}}</h3>
+              </ion-label>
+
+              <ion-text color="danger">
+                  <h2>{{livro.preco | currency}}</h2>
+              </ion-text>
+          </ion-item>
     </ion-list>
+
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button [routerLink]="['novo']">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
 </ion-content>

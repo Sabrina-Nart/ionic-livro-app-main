@@ -30,3 +30,5 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
+
+//Rotas -Pega o que foi feito nas pastas e faz aparecer na web

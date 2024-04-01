@@ -1,4 +1,3 @@
 export function isString(atributo: any) {
-    return atributo !== undefined && typeof atributo === 'string' ?
-        atributo : ''
+    return atributo !== undefined && typeof atributo === 'string' ? atributo : ''
 }

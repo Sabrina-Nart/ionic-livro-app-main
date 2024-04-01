@@ -1,48 +1,52 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Book Store App</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>Book Store App</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>
-        Bem-vindo ao Book Store App!
-      </ion-card-title>
-      <ion-card-subtitle>
-        Gerencie sua biblioteca utilizando o melhor app do mercado!
-      </ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      Cadastre os seus livros e autores e os tenha sempre em mão!
-    </ion-card-content>
+      <ion-card-header>
+          <ion-card-title>
+            Bem-vindo ao Book Store App!
+          </ion-card-title>
+
+          <ion-card-subtitle>
+            Gerencie sua biblioteca utilizando o melhor app do mercado!
+          </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+          Cadastre os seus livros e autores e os tenha sempre em mão!
+      </ion-card-content>
   </ion-card>
 
-  <ion-row>
-    <ion-col>
-      <ion-card>
-        <ion-card-header [routerLink]="['/livros']">
-          <ion-card-title>
-            <ion-icon name="book" class="ion-float-left ion-margin-end"></ion-icon>
-            Livros
-          </ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-col>
-    <ion-col>
-      <ion-card>
-        <ion-card-header [routerLink]="['/autores']">
-          <ion-card-title>
-            <ion-icon name="people-circle" class="ion-float-left ion-margin-end"></ion-icon>
-            Autores
-          </ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-col>
-  </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-card>
+                  <ion-card-header [routerLink]="['/livros']">
+                        <ion-card-title>
+                            <ion-icon name="book" class="ion-float-left ion-margin-end"></ion-icon>
+                              Livros
+                          </ion-card-title>
+                      </ion-card-header>
+                  </ion-card>
+              </ion-col>
+
+              <ion-col>
+                <ion-card>
+                  <ion-card-header [routerLink]="['/autores']">
+                      <ion-card-title>
+                        <ion-icon name="people-circle" class="ion-float-left ion-margin-end"></ion-icon>
+                          Autores
+                      </ion-card-title>
+                </ion-card-header>
+            </ion-card>
+        </ion-col>
+    </ion-row>
 </ion-content>
