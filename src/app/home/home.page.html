@@ -26,7 +26,7 @@
       </ion-card-content>
   </ion-card>
 
-    <ion-row>
+  <ion-row>
         <ion-col>
             <ion-card>
                   <ion-card-header [routerLink]="['/livros']">
@@ -48,5 +48,16 @@
                 </ion-card-header>
             </ion-card>
         </ion-col>
-    </ion-row>
+
+        <ion-col>
+          <ion-card>
+            <ion-card-header [routerLink]="['/bored']">
+              <ion-card-title>
+                <ion-icon name="people-circle" class="ion-float-left ion-margin-end"></ion-icon>
+                  Bored API
+              </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+  </ion-row>
 </ion-content>

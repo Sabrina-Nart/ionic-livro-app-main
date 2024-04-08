@@ -1,7 +1,0 @@
-{
-  "name": "boredApp",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}

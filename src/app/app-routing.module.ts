@@ -20,6 +20,11 @@ const routes: Routes = [
   {
     path: 'livros',
     loadChildren: () => import('./livros/livro.module').then(module => module.LivroModule)
+  },
+  {
+    path: 'bored',
+    loadChildren: () =>
+      import('./borderAPI/bored.module').then(module => module.BoredModule)
   }
 ];
 

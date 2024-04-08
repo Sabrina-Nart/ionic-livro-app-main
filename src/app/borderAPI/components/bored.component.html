@@ -1,0 +1,25 @@
+<h1>Teste da API Bored</h1>
+
+<div>
+    <label for="activityType">Selecione o tipo de atividade:</label>
+    <select id="activityType" [(ngModel)]="selectedType">
+        <option value="">Selecione...</option>
+        <option value="education">Educação</option>
+        <option value="recreational">Recreativo</option>
+        <option value="social">Social</option>
+        <option value="diy">Faça Você Mesmo</option>
+        <option value="charity">Caridade</option>
+        <option value="cooking">Culinária</option>
+        <option value="relaxation">Relaxamento</option>
+        <option value="music">Música</option>
+        <option value="busywork">Trabalho Ocupado</option>
+    </select>
+    <button (click)="getRandomActivity()">Buscar Atividade</button>
+</div>
+
+<div id="activityDetails" *ngIf="activity">
+    <h2>{{ activity.activity }}</h2>
+    <p><strong>Tipo:</strong> {{ activity.type }}</p>
+    <p><strong>Participantes:</strong> {{ activity.participants }}</p>
+    <p><strong>Preço:</strong> {{ activity.price }}</p>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Activity } from '../borderAPI/components/activity.interface';
 
 @Component({
   selector: 'app-home',
