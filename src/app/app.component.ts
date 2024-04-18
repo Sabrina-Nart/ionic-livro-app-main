@@ -10,7 +10,8 @@ export class AppComponent {
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'Livros', url: '/livros', icon: 'book' },
     { title: 'Autores', url: '/autores', icon: 'people-circle' },
-    { title: 'Bored', url: '/bored', icon: 'happy' },
+    { title: 'Bored', url: '/bored', icon: 'rose' },
+    { title: 'GitHub', url: '/api_github', icon: 'sad'},
   ];
 
   constructor() {}
