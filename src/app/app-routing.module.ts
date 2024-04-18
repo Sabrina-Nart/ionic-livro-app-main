@@ -19,19 +19,7 @@ const routes: Routes = [
   {
     path: 'livros',
     loadChildren: () => import('./livros/livro.module').then(module => module.LivroModule)
-  },
-
-  {
-    path: 'bored',
-    loadChildren: () =>
-      import('./bored/bored.module').then(module => module.BoredModule)
-  }/*,
-
-  {
-    path: 'api_github',
-    loadChildren: () =>
-      import('./api_github/github.module').then(module => module.github.module)
-  } */
+  }
 ];
 
 @NgModule({
