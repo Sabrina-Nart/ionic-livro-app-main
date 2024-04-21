@@ -40,3 +40,30 @@
 
 
 <!--HTML do Menu lateral-->
+
+<!--
+
+1. **Estrutura Geral**:
+    - O código começa com um componente `<ion-app>`, que é o contêiner raiz para todo o aplicativo.
+    - Dentro do `<ion-app>`, temos um componente `<ion-split-pane>`. Esse componente divide a tela em duas partes: o conteúdo principal e o menu lateral.
+    - O conteúdo principal é definido pelo `<ion-router-outlet>` com o ID "main-content".
+    - O menu lateral é definido pelo `<ion-menu>` com o ID "main-content".
+
+2. **Menu Lateral**:
+    - O menu lateral é ativado quando o usuário desliza da borda esquerda da tela ou toca no ícone de menu.
+    - Ele contém uma lista de itens de menu, cada um representado por um `<ion-item>`.
+    - Cada item de menu é vinculado a uma rota específica usando a diretiva `[routerLink]`.
+    - Os ícones são exibidos à esquerda dos rótulos dos itens de menu usando o componente `<ion-icon>`.
+
+3. **Rotas**:
+    - As rotas são definidas no array `routes`.
+    - Cada rota possui um caminho (`path`) e um módulo a ser carregado assincronamente quando a rota é acessada (`loadChildren`).
+    - Por exemplo, a rota para a página "home" carrega o módulo `HomePageModule`.
+
+4. **Observações**:
+    - O código usa a sintaxe Angular, como `*ngFor` para iterar sobre os itens de menu e `[routerLinkActive]` para aplicar estilos ao item de menu ativo.
+    - Os ícones são personalizados com base na plataforma (iOS ou Android) usando as propriedades `[ios]` e `[md]`.
+
+Em resumo, esse código cria um layout com um menu lateral e define as rotas para diferentes páginas do aplicativo. Quando o usuário seleciona um item de menu, o conteúdo principal é atualizado com o conteúdo da página correspondente.
+
+-->
