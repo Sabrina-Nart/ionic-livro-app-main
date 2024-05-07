@@ -3,6 +3,8 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
 import { AutorInterface, AutorService } from "@autor";
 import { AlertService } from "@services";
 import { Subscription } from "rxjs";
+import { LivroService } from "../../services/livro.service";
+import { Router } from "@angular/router";
 
 @Component({
     templateUrl: './livro-cadastro.component.html'
@@ -26,14 +28,13 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
     }
 
     autores: AutorInterface[] = [];
-
     livroForm = new FormGroup({
         titulo: new FormControl('', [
             Validators.required,
             Validators.minLength(3)
         ]),
         subtitulo: new FormControl(''),
-        paginas: new FormControl(0, Validators.min(5)),
+        numeroPaginas: new FormControl(0, Validators.min(5)),
         isbn: new FormControl('', [
             Validators.minLength(10),
             Validators.maxLength(10)
@@ -43,7 +44,7 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
             Validators.required,
             this.anoAtualValidator
         ]),
-        url: new FormControl('http://', Validators.pattern(this.URL_PATTERN)),
+        logoUrl: new FormControl('http://', Validators.pattern(this.URL_PATTERN)),
         preco: new FormControl(0, Validators.min(0)),
         autores: new FormControl([], this.autoresValidator)
     });
@@ -51,12 +52,14 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
     private subscriptions = new Subscription();
 
     constructor(
+        private router: Router,
         private autorService: AutorService,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private livroService: LivroService,
     ) { }
 
-    ngOnInit(): void { //Lógica para carregar os autores
-        this.carregaAutores() //Por causa da ComboBox
+    ngOnInit(): void {
+        this.carregaAutores()
     }
 
     ngOnDestroy(): void {
@@ -83,7 +86,25 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
     }
 
     onSubmit() {
-        console.log(this.livroForm.value);
+        const livro = this.livroForm.value;
+
+        this.subscriptions.add(
+            this.livroService
+                .save(livro)
+                .subscribe({
+                    next: () => {
+                        this.router.navigate(['/livros'])
+                    },
+                    error: (error) => {
+                        console.error(error);
+
+                        this.alertService.error(
+                            'Não foi possível salvar o livro.'
+                        );
+                    }
+                })
+        );
+
     }
 }
 

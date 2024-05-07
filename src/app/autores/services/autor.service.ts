@@ -41,4 +41,5 @@ export class AutorService {
       return this.adicionar(autor);
     }
   }
+
 }
