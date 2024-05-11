@@ -97,7 +97,6 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
                     },
                     error: (error) => {
                         console.error(error);
-
                         this.alertService.error(
                             'Não foi possível salvar o livro.'
                         );

@@ -1,11 +1,13 @@
 <ion-header>
-    <ion-toolbar color="primary">
-          <ion-buttons slot="start">
-              <ion-menu-button></ion-menu-button>
-          </ion-buttons>
+  <ion-toolbar color="primary">
 
-          <ion-title>Cadastro de Livros</ion-title>
-    </ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>Cadastro de Livros</ion-title>
+
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -21,7 +23,7 @@
       </ion-item>
 
       <ion-item>
-          <ion-input formControlName="paginas" type="number" placeholder="N°. Páginas" label="N°. Páginas"
+          <ion-input formControlName="numeroPaginas" type="number" placeholder="N°. Páginas" label="N°. Páginas"
               labelPlacement="floating"></ion-input>
       </ion-item>
 
@@ -38,7 +40,7 @@
       </ion-item>
 
       <ion-item>
-          <ion-input formControlName="url" type="url" placeholder="Logo (URL)" label="Logo (URL)" labelPlacement="floating"></ion-input>
+          <ion-input formControlName="logoUrl" type="url" placeholder="Logo (URL)" label="Logo (URL)" labelPlacement="floating"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -48,10 +50,10 @@
       <ion-item>
           <ion-item>
               <ion-select formControlName="autores" label="Autor(es)" value="" multiple="true" placeholder="Selecione os autores"
-                    [compareWith]="compareWith">
-                    <ion-select-option *ngFor="let autor of autores" [value]="autor">
-                        {{autor.nome}}
-                    </ion-select-option>
+                  [compareWith]="compareWith">
+                  <ion-select-option *ngFor="let autor of autores" [value]="autor">
+                      {{autor.nome}}
+                  </ion-select-option>
               </ion-select>
           </ion-item>
       </ion-item>
