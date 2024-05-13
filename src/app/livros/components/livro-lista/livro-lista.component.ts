@@ -9,7 +9,6 @@ import { AlertController, ViewWillEnter } from "@ionic/angular";
     templateUrl: './livro-lista.component.html',
     styleUrls: ['./livro-lista.component.scss']
 })
-
 export class LivroListaComponent implements OnInit, OnDestroy, ViewWillEnter {
 
     public livros: Livro[] = [];
@@ -25,7 +24,9 @@ export class LivroListaComponent implements OnInit, OnDestroy, ViewWillEnter {
         this.listagem();
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+
+    }
 
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
@@ -77,6 +78,7 @@ export class LivroListaComponent implements OnInit, OnDestroy, ViewWillEnter {
             })
             .then((alerta) => alerta.present());
     }
+
 }
 
 /*

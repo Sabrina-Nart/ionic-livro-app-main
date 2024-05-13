@@ -16,6 +16,16 @@
 
       <ion-item>
           <ion-input formControlName="titulo" type="text" placeholder="Título" label="Título" labelPlacement="floating"></ion-input>
+
+          <ion-text color="danger" *ngIf="livroForm.get('titulo')?.invalid && (livroForm.get('titulo')?.dirty || livroForm.get('titulo')?.touched)">
+              <p *ngIf="livroForm.get('titulo')?error?.['required']">
+                  Campo obrigatório
+              </p>
+
+              <p *ngIf="livroForm.get('titulo')?.error?.[minilength]">
+                  O tamanho mínino sãon 3 caracteres.
+              </p>
+          </ion-text>
       </ion-item>
 
       <ion-item>

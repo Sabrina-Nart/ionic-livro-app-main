@@ -21,10 +21,13 @@ export class LivroService {
             .post<LivroInterface>(this.API_URL, livro);
     }
 
+    getLivro(id: string) {
+        return this.httpClient.get<LivroInterface>(this.API_URL + id);
+    }
+
     getLivros(): Observable<Livro[]> {
         return this.httpClient
             .get<Livro[]>(this.API_URL)
-
             .pipe(
                 tap((data) => console.log('Data: ', data)),
                 map((data) => {
@@ -32,6 +35,12 @@ export class LivroService {
                 }),
                 tap((data) => console.log('Data: ', data)),
             )
+    }
+
+    update(id: string, livro: any) {
+        return this.httpClient.put(
+            this.API_URL + id, livro
+        )
     }
 
     remove(livro: Livro) {

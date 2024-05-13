@@ -4,7 +4,7 @@ import { AutorInterface, AutorService } from "@autor";
 import { AlertService } from "@services";
 import { Subscription } from "rxjs";
 import { LivroService } from "../../services/livro.service";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
     templateUrl: './livro-cadastro.component.html'
@@ -27,6 +27,7 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
         return null;
     }
 
+    id: string = '';
     autores: AutorInterface[] = [];
     livroForm = new FormGroup({
         titulo: new FormControl('', [
@@ -46,12 +47,14 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
         ]),
         logoUrl: new FormControl('http://', Validators.pattern(this.URL_PATTERN)),
         preco: new FormControl(0, Validators.min(0)),
-        autores: new FormControl([], this.autoresValidator)
+        autores: new FormControl<AutorInterface[]>([], this.autoresValidator)
     });
 
     private subscriptions = new Subscription();
 
     constructor(
+        private activatedRoute: ActivatedRoute,
+
         private router: Router,
         private autorService: AutorService,
         private alertService: AlertService,
@@ -60,6 +63,19 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.carregaAutores()
+
+        this.id = this.activatedRoute.snapshot.params['id'];
+
+        if (this.id) {
+            this.subscriptions.add(
+                this.livroService.getLivro(this.id).subscribe((livro) => {
+                    this.livroForm.patchValue({ ...livro })
+                }, (error) => {
+                    this.alertService.error('Não foi possível carregar os dados do livro!')
+                    console.error(error)
+                })
+            )
+        }
     }
 
     ngOnDestroy(): void {
@@ -88,9 +104,15 @@ export class LivroCadastroComponent implements OnInit, OnDestroy {
     onSubmit() {
         const livro = this.livroForm.value;
 
+        let observable;
+        if (this.id) {
+            observable = this.livroService.update(this.id, livro);
+        } else {
+            observable = this.livroService.save(livro);
+        }
+
         this.subscriptions.add(
-            this.livroService
-                .save(livro)
+            observable
                 .subscribe({
                     next: () => {
                         this.router.navigate(['/livros'])

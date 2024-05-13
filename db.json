@@ -71,25 +71,6 @@
       ]
     },
     {
-      "id": 3,
-      "titulo": "JavaScript - The Good Parts 2",
-      "subtitulo": "",
-      "numeroPaginas": 170,
-      "isbn": "0596517742",
-      "editora": "O'Reilly",
-      "ano": 2008,
-      "logoUrl": "https://m.media-amazon.com/images/I/7185IMvz88L._SL1500_.jpg",
-      "preco": 259.87,
-      "autores": [
-        {
-          "nome": "David Cockford",
-          "dataNascimento": "2000-04-28T20:30:34.363-03:00",
-          "genero": "M",
-          "id": 2
-        }
-      ]
-    },
-    {
       "id": 4,
       "titulo": "JavaScript - The Good Parts 2",
       "subtitulo": "",
@@ -126,25 +107,6 @@
           "id": 2
         }
       ]
-    },
-    {
-      "titulo": "3r43r",
-      "subtitulo": "4r4",
-      "numeroPaginas": 58,
-      "isbn": "5858585858",
-      "editora": "585",
-      "ano": 2000,
-      "logoUrl": "https://docs.google.com/spreadsheets/d/17N-Qu6MpdEXqo4mZRIXhjmMpYXe62dYawwLkU0bYhzI/edit#gid=1121225496",
-      "preco": 58,
-      "autores": [
-        {
-          "nome": "David Cockford",
-          "dataNascimento": "2000-04-28T20:30:34.363-03:00",
-          "genero": "M",
-          "id": 2
-        }
-      ],
-      "id": 6
     }
   ]
 }
