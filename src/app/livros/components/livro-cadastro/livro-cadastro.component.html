@@ -18,11 +18,12 @@
           <ion-input formControlName="titulo" type="text" placeholder="Título" label="Título" labelPlacement="floating"></ion-input>
 
           <ion-text color="danger" *ngIf="livroForm.get('titulo')?.invalid && (livroForm.get('titulo')?.dirty || livroForm.get('titulo')?.touched)">
-              <p *ngIf="livroForm.get('titulo')?error?.['required']">
+
+            <p *ngIf="livroForm.get('titulo')?errors?.['required']">
                   Campo obrigatório
               </p>
 
-              <p *ngIf="livroForm.get('titulo')?.error?.[minilength]">
+              <p *ngIf="livroForm.get('titulo')?.errors?.[minilength]">
                   O tamanho mínino sãon 3 caracteres.
               </p>
           </ion-text>
@@ -33,12 +34,21 @@
       </ion-item>
 
       <ion-item>
-          <ion-input formControlName="numeroPaginas" type="number" placeholder="N°. Páginas" label="N°. Páginas"
-              labelPlacement="floating"></ion-input>
+          <ion-input formControlName="numeroPaginas" type="number" placeholder="N°. Páginas" label="N°. Páginas" labelPlacement="floating"></ion-input>
+
+          <ion-text color="danger" *ngIf="livroForm.get('numeroPaginas')?.invalid && (livroForm.get('numeroPaginas')?.dirty || livroForm.get('numeroPaginas')?.touched)">
+            <p *ngIf="livroForm.get('numeroPaginas')?error?.['numeroPaginas']">
+                Campo obrigatório
+            </p>
+
+            <p *ngIf="livroForm.get('numeroPaginas')?.error?.[minilength]">
+                O tamanho mínino sãon 5 caracteres.
+            </p>
+        </ion-text>
       </ion-item>
 
       <ion-item>
-          <ion-input formControlName="isbn" type="text" placeholder="ISBN" label="ISBN" labelPlacement="floating"></ion-input>
+          <ion-input formControlName="isbn" type="text" placeholder="ISBN label="ISBN labelPlacement="floating"></ion-input>
       </ion-item>
 
       <ion-item>

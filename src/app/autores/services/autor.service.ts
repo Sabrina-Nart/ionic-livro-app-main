@@ -18,11 +18,11 @@ export class AutorService {
     return this.httpClient.get<AutorInterface[]>(this.url);
   }
 
-  excluir(id: number): Observable<Object> {
+  excluir(id: string): Observable<Object> {
     return this.httpClient.delete(`${this.url}/${id}`);
   }
 
-  getAutor(id: number): Observable<AutorInterface> {
+  getAutor(id: string): Observable<AutorInterface> {
     return this.httpClient.get<AutorInterface>(`${this.url}/${id}`);
   }
 
@@ -41,5 +41,4 @@ export class AutorService {
       return this.adicionar(autor);
     }
   }
-
 }
